@@ -354,12 +354,6 @@ section {
     gap: 2rem;
 }
 
-@media (min-width: 768px) {
-    .paper-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 .paper-section {
     margin-bottom: 1.5rem;
 }

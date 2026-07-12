@@ -15,11 +15,9 @@
         <div class="nav-content">
             <div class="nav-brand">X. Zhou</div>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#research">Research</a>
-                <a href="#publications">Publication</a>
-                <a href="#experience">Experience</a>
+                <a href="#hero">About</a>
+                <a href="#experience">Research Experience</a>
+                <a href="#publications">Publications</a>
                 <a href="#projects">Projects</a>
             </div>
         </div>
@@ -27,34 +25,31 @@
 
     <div class="container">
         <section id="hero" class="hero" style="animation-delay: 0.1s; display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;">
-            <!-- 个人照片 -->
             <div class="hero-photo" style="flex-shrink: 0; text-align: center;">
-                <img src="./fig/白底大头照.jpg" alt="Xiaohao Zhou" style="width: 130px; height: 170px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid var(--border-color);">
+                <img src="./fig/AIgen.png" alt="Portrait of Xiaohao Zhou" style="width: 130px; height: 170px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid var(--border-color);">
             </div>
-
-            <!-- 核心信息概览 -->
-            <div class="hero-content" style="flex: 1; min-width: 300px;">
-                <h1 style="margin-bottom: 0.4rem; font-size: 2rem; font-family: 'Libre Baskerville', serif;">Xiaohao Zhou</h1>
-                <div style="font-size: 1rem; color: var(--text-color); margin-bottom: 0.8rem; font-weight: 500;">
+            <div class="hero-content" style="flex: 1 1 100%; min-width: 300px; text-align: center; margin-top: 1rem;">
+                <h1 style="margin-bottom: 0.4rem; font-size: 2.6rem; font-family: 'Libre Baskerville', serif;">Xiaohao Zhou</h1>
+                <div style="font-size: 1.15rem; color: var(--text-color); margin-bottom: 1rem; font-weight: 500;">
                     B.S. Student in Artificial Intelligence (Expected Jun 2027)<br>
-                    <i data-feather="map-pin" style="width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px;"></i>Chongqing University, China
+                    <i data-feather="map-pin" style="width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px;"></i>Chongqing University (Project 985)
                 </div>
 
-                <ul style="font-size: 0.95rem; color: var(--text-color); padding-left: 1.2rem; line-height: 1.6; margin-bottom: 1rem;">
-                    <li style="margin-bottom: 0.3rem;"><strong>Academics:</strong> GPA: 3.75/4.00 (Rank: 2/53) | English: CET-6 (512) <br><span style="font-size: 0.85rem; color: #666;">Core Courses: Adv. Math (96), Prob. & Stat. (92), Discrete Math (97)</span></li>
-                    <li style="margin-bottom: 0.3rem;"><strong>Research Interests:</strong>  LLM Agents, Code Intelligence.</li>
-                    <li><strong>Publication:</strong> one first-author paper currently under review at ASE 2026.</li>
+                <ul style="font-size: 1.08rem; color: var(--text-color); line-height: 1.9; margin: 0 auto 1.2rem; padding-left: 0; list-style: none;">
+                    <li style="margin-bottom: 0.45rem;">
+                        <strong>Academics:</strong> GPA: 3.75/4.00 (Rank: 2/53) | English: CET-6 (512)<br>
+                        <span style="font-size: 0.98rem; color: #666;">Core Courses: Advanced Mathematics (96), Probability and Statistics (92), Discrete Mathematics (97)</span>
+                    </li>
+                    <li><strong>Publication:</strong> one first-author manuscript prepared for submission to TOSEM (CCF-A)</li>
                 </ul>
 
-                <!-- <div class="hero-tags">
-                    <span class="tag">AI4SE</span>
-                    <span class="tag">SE4AI</span>
-                    <span class="tag">LLM Agents</span>
-                </div> -->
+                <div style="margin-top: 14px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="./fig/chengji.png" alt="Academic performance overview" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                </div>
             </div>
         </section>
 
-        <section id="about" style="animation-delay: 0.2s;">
+        <!-- <section id="about" style="animation-delay: 0.2s;">
             <h2 class="section-title">About & Research Plan</h2>
             <div class="card">
                 <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">
@@ -63,7 +58,6 @@
                 </p>
 
                 <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <!-- AI4SE Box -->
                     <div style="flex: 1; min-width: 280px; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: #fafafa; position: relative;">
                         <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
                             <i data-feather="cpu" style="width:20px;"></i> Direction 1: Reasoning and Planning
@@ -72,26 +66,8 @@
                             <strong>Overview:</strong>
                             Discovering better training and prompting methods to bulid more capable agents in Planning and Tool Using for better interaction with environments.
                         </p>
-                        <!-- <div style="font-size: 0.9rem; margin-bottom: 1.2rem; color: #444; border-left: 3px solid var(--primary-color); padding-left: 12px;">
-                            <strong style="display:block; margin-bottom: 8px;">Inspired by papers:</strong>
-
-                            <div style="margin-bottom: 1.5rem;">
-                                <a href="https://arxiv.org/pdf/2510.22775" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='inherit'"><i>1. "Scalable Supervising Software Agents with Patch Reasoner"</i></a>
-                                <div style="margin-top: 6px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/scalble_supervise.png" alt="Scalable Supervising Software Agents" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                                </div>
-                            </div>
-
-                            <div>
-                                <a href="https://arxiv.org/pdf/2505.13445" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='inherit'"><i>2. "Trust, But Verify: A Self-Verification Approach to Reinforcement Learning with Verifiable Rewards"</i></a>
-                                <div style="margin-top: 6px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/Test_verify.png" alt="Trust, But Verify" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
 
-                    <!-- SE4AI Box -->
                     <div style="flex: 1; min-width: 280px; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: #fafafa; position: relative;">
                         <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
                             <i data-feather="shield" style="width:20px;"></i> Direction 2: Evaluation and Reliability
@@ -100,27 +76,10 @@
                             <strong>Overview:</strong>
                             Developing robust agent scaffolds and evaluation harnesses. Ensuring LLMs can reliably identify failures and interact with diverse environments (CLI/GUI) in realistic operational settings.
                         </p>
-                        <!-- <div style="font-size: 0.9rem; margin-bottom: 1.2rem; color: #444; border-left: 3px solid var(--primary-color); padding-left: 12px;">
-                            <strong style="display:block; margin-bottom: 8px;">Inspired by papers:</strong>
-
-                            <div style="margin-bottom: 1.5rem;">
-                                <a href="https://microsoft.github.io/OpenRCA/" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='inherit'"><i>1. "OpenRCA: Evaluating LLMs for Root Cause Analysis"</i></a>
-                                <div style="margin-top: 6px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/openrca.png" alt="OpenRCA" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                                </div>
-                            </div>
-
-                            <div>
-                                <a href="https://aclanthology.org/2025.acl-long.189/" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='inherit'"><i>2. "UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench"</i></a>
-                                <div style="margin-top: 6px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/UTBoost.png" alt="UTBoost" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- <section id="education" style="animation-delay: 0.3s;">
             <h2 class="section-title">Education</h2>
@@ -201,23 +160,46 @@
                 <div class="edu-flex" style="margin-bottom: 1rem;">
                     <div class="edu-main">
                         <div class="edu-title">Research Assistant, Chongqing University</div>
-                        <div class="edu-sub">Advisors: Prof. Hongyu Zhang and Assoc. Prof. Chao Liu</div>
+                        <div class="edu-sub">Advisors: Assoc. Prof. Chao Liu and Prof. Hongyu Zhang</div>
                     </div>
                     <div class="edu-meta">Apr 2025 - Present</div>
+                </div>
+                <div style="margin-bottom: 0.8rem; font-size: 0.95rem; color: #444;">
+                    <strong>Research Focus:</strong> Code Search & LLM Agent
                 </div>
                 <ul class="academic-list">
                     <li>Leading research on semantic code search, with a focus on how LLMs can better support cross-domain code retrieval.</li>
                     <li>Proposed the AbsMatcher framework, a two-stage method combining semantic abstraction and LLM-based comparative reranking.</li>
                     <li>Conducted empirical analysis on retrieval effectiveness and efficiency, showing meaningful gains in both ranking quality and cost reduction.</li>
-                    <li>Prepared and submitted a first-author paper based on this project for ASE 2026 review.</li>
+                    <li>Prepared a first-author manuscript based on this project for submission to TOSEM.</li>
                 </ul>
             </div>
+
+
+            <div class="card" style="margin-top: 1rem;">
+                <div class="edu-flex" style="margin-bottom: 1rem;">
+                    <div class="edu-main">
+                        <div class="edu-title">Research Assistant, Zhejiang University</div>
+                    </div>
+                    <div class="edu-meta">Jan 2026 - Jun 2026</div>
+                </div>
+                <div style="margin-bottom: 0.8rem; font-size: 0.95rem; color: #444;">
+                    <strong>Research Focus:</strong> Code Agents & GUI Agents
+                </div>
+                <ul class="academic-list">
+                    <li>Conducted a systematic study of GUI agents, reproduced Show-UI, Agent S, and OpenApps, and advanced several research ideas through experimental validation.</li>
+                    <li>Surveyed and reproduced code-agent research and contributed to idea validation, experiments, and paper writing; participated in a MoE-LoRA study addressing bottlenecks in multilingual program repair as the second-listed co-first author.</li>
+                    <li>Supported an Ant Foundation research proposal by drafting technical content and producing figures.</li>
+                </ul>
+            </div>
+
+
         </section>
 
         <section id="publications" style="animation-delay: 0.5s;">
             <h2 class="section-title">Publications</h2>
             <div class="card paper-card">
-                <div class="paper-venue">Under Review for ASE 2026</div>
+                <div class="paper-venue">Prepared for Submission to TOSEM</div>
                 <h3 class="paper-title">AbsMatcher: LLM-Based Semantic Abstraction and Comparative Reranking for Cross-Domain Code Search</h3>
                 <div class="paper-authors">
                     <strong>Xiaohao Zhou</strong>, Chao Liu, Yueheng Zhu, Yanming Yang, Ying Zou, Hongyu Zhang
@@ -253,8 +235,9 @@ data scarcity issues.
                         <h5><i data-feather="target" style="width:16px;"></i> Motivation</h5>
                         <ul class="academic-list">
                             <li>Existing code search models transfer poorly to cross-domain settings, where natural-language queries and code snippets often exhibit a substantial semantic gap and target-domain supervision is scarce.</li>
-                            <li>Recent LLM-based zero-shot solutions alleviate the need for fine-tuning, but still rely on multi-view embedding fusion, which introduces extra computation and unstable fusion effects.</li>
-                            <li>Even when relevant candidates are retrieved into the top-k list, current methods still struggle to distinguish semantically similar hard candidates, leading to suboptimal head-ranking performance.</li>
+                            <li>Data generation methods can provide additional training data, but each transfer to a new target domain still requires another round of fine-tuning, resulting in substantial time costs and reduced practical usability.</li>
+                            <li>Recent LLM-based zero-shot methods reduce the need for fine-tuning, but still rely on multi-view embedding fusion, which introduces extra computation and unstable fusion effects.</li>
+                            <li>Even current state-of-the-art methods still achieve limited accuracy. We believe this is because they mainly use LLMs for semantic extraction, without fully exploiting the broader strengths of LLMs.</li>
                         </ul>
                         <div style="margin-top: 12px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                             <img src="./fig/performance.png" alt="Performance Results" style="width: 100%; height: auto; display: block; border-radius: 4px;">
@@ -359,89 +342,37 @@ data scarcity issues.
                     </a>
                 </div>
                 <div class="text-sm">
-                    <p style="margin-bottom:0.8rem;">A learning-oriented AI agent system for cross-device interaction and task automation.</p>
+                    <p style="margin-bottom:0.8rem;">A learning-oriented AI agent system for cross-device interaction and task automation, enabling mobile-to-PC control.</p>
                     <ul class="academic-list">
                         <li>Built a locally deployed agent system that allows users to control computers from mobile devices through natural language.</li>
-                        <li>Implemented task planning, action execution, and interactive control as the core workflow of the system.</li>
-                        <li>Used the project to explore how agent architectures can connect user requests with practical system operations.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="project-header">
-                    <h3>AI Customer Service</h3>
-                    <a href="https://github.com/Xiaohao-trumpet/shopping-agent-with-PAHF-memory-system-by-Langgraph.git" target="_blank" class="btn-github">
-                        <i data-feather="github" style="width:16px;"></i> GitHub
-                    </a>
-                </div>
-                <div class="text-sm">
-                    <p style="margin-bottom:0.8rem;">A personalized shopping agent powered by LangGraph and PAHF memory architecture.</p>
-                    <ul class="academic-list">
-                        <li>Designed and implemented an autonomous shopping agent using LangGraph, integrating a custom
-PAHF memory system to enhance context retention.</li>
-                        <li>Improved agent personalization and adaptive behavior in long-horizon interactions by effectively man
-aging conversation state and feedback loops. </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="project-header">
-                    <h3>ToolGen Reproduction</h3>
-                    <a href="https://github.com/Xiaohao-trumpet/ToolGen-Reproduction" target="_blank" class="btn-github">
-                        <i data-feather="github" style="width:16px;"></i> GitHub
-                    </a>
-                </div>
-                <div class="text-sm">
-                    <p style="margin-bottom:0.8rem;">A learning-oriented AI agent system for cross-device interaction and task automation.</p>
-                    <ul class="academic-list">
-                        <li>Reimplemented the ToolGen framework, mastering the full-stack workflow of agent training, data
-synthesis, and environment interaction.</li>
-                        <li>Explored advanced prompting and training methodologies to improve reasoning, planning, and tool
-execution within autonomous agent systems.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="project-header">
-                    <h3>SWE-bench Reproduction</h3>
-                    <a href="https://github.com/Xiaohao-trumpet/SWE-bench-Fork" target="_blank" class="btn-github">
-                        <i data-feather="github" style="width:16px;"></i> GitHub
-                    </a>
-                </div>
-                <div class="text-sm">
-                    <p style="margin-bottom:0.8rem;">A reproduction project for understanding the SWE-bench evaluation framework for autonomous software engineering agents.</p>
-                    <ul class="academic-list">
-                        <li>Reproduced the SWE-bench pipeline, including environment setup, issue resolution flow, and patch evaluation.</li>
-                        <li>Developed hands-on understanding of benchmark construction and evaluation protocols for software engineering agents.</li>
-                        <li>Strengthened my experience with reliable testing setups for interactive and code-focused agent systems.</li>
-                    </ul>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <div style="flex: 1; min-width: 280px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            <img src="./fig/linchaozhu/mini1.jpg" alt="Instruction Issuance Page" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                            <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem; text-align: center;">Instruction Issuance Page</div>
+                        </div>
+                        <div style="flex: 1; min-width: 280px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            <img src="./fig/linchaozhu/mini2.jpg" alt="Task Execution Page" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                            <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem; text-align: center;">Task Execution Page</div>
+                        </div>
+                    </div>
+                    <h4 style="margin-top: 1.2rem; color: var(--primary-color); font-size: 1rem;">
+                        Architecture Comparison with OpenClaw
+                    </h4>
+                    <div style="margin-top: 12px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <img src="./fig/linchaozhu/comparison.drawio.svg" alt="MiniClaw vs OpenClaw Architecture Comparison" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                    </div>
+                    <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem; text-align: center;">
+                        Architecture Comparison: MiniClaw, Claude Code, and OpenClaw
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- <section id="future" style="animation-delay: 0.8s;">
-            <h2 class="section-title">Why PhD ?</h2>
-            <div class="card" style="background: rgba(52, 152, 219, 0.03);">
-                <ul class="academic-list" style="margin-top: 0.5rem; margin-bottom: 0; list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 1.2rem;">
-                        <strong style="color: var(--primary-color); font-size: 1.05rem; display: block; margin-bottom: 0.4rem;">
-                            <i data-feather="compass" style="width:18px; color: var(--primary-color); margin-right: 6px; vertical-align: -3px;"></i>1. Innate Curiosity & Passion for Technology
-                        </strong>
-                    </li>
-                    <li style="margin-bottom: 1.2rem;">
-                        <strong style="color: var(--primary-color); font-size: 1.05rem; display: block; margin-bottom: 0.4rem;">
-                            <i data-feather="zap" style="width:18px; color: var(--primary-color); margin-right: 6px; vertical-align: -3px;"></i>2. Thirst for Mastery & Innovation
-                        </strong>
-                    </li>
-                    <li>
-                        <strong style="color: var(--primary-color); font-size: 1.05rem; display: block; margin-bottom: 0.4rem;">
-                            <i data-feather="sun" style="width:18px; color: var(--primary-color); margin-right: 6px; vertical-align: -3px;"></i>3. Inner Growth & Self-Discovery
-                        </strong>
-                    </li>
-                </ul>
-            </div>
-        </section> -->
     </div>
+
+
 
     <footer>
         <div class="container">

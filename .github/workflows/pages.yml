@@ -2,7 +2,7 @@ name: Deploy static homepage to GitHub Pages
 
 on:
   push:
-    branches: [clean-tem]
+    branches: [main]
   workflow_dispatch:
 
 permissions:

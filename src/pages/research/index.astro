@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const areas = [
+  ["01", "Agent systems", "TBD：记录工具调用、环境交互、状态和轨迹相关的研究问题。"],
+  ["02", "Terminal / Code Agent", "TBD：逐步整理终端和代码环境中的任务、反馈与失败恢复。"],
+  ["03", "RL / RLVR", "TBD：记录强化学习、可验证奖励、数据构造与训练信号。"],
+  ["04", "ALE / Benchmark / Evaluator", "TBD：整理 benchmark、evaluator、trajectory 和 harness 的接口。"]
+];
+---
+<BaseLayout title="Research · 周晓昊" description="周晓昊的研究方向索引。" active="research">
+  <div class="section"><p class="page-kicker">RESEARCH</p><h1 class="hero-title">研究方向索引。</h1><p class="section-lede">这里先搭结构，后续随着 notes 和公开文章逐步更新。所有具体项目、论文和结果暂时保留为 TBD。</p></div>
+  <div class="section"><div class="two-column">{areas.map(([number, title, text]) => <div class="soft-card"><p class="hero-kicker">{number}</p><h3>{title}</h3><p class="tbd">{text}</p></div>)}</div></div>
+</BaseLayout>

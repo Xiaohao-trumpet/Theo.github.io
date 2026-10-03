@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const entries = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+const formatDate = (date: Date) => new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "short", day: "numeric" }).format(date);
+---
+<BaseLayout title="Blog · 周晓昊" description="周晓昊的公开研究博客。" active="blog">
+  <div class="section"><p class="page-kicker">PUBLIC BLOG</p><h1 class="hero-title">Blog。</h1><p class="page-intro">这里发布整理完成、可以公开的研究思考。文章采用 Markdown，支持 LaTeX 数学公式、图片、代码块、引用和图标。</p></div>
+  <div class="section">
+    <div class="blog-toolbar"><span>{entries.length} published entries</span><span>Markdown · KaTeX · static pages</span></div>
+    <div class="blog-list">
+      {entries.length === 0 ? <div class="empty-blog"><h3>第一篇文章还在准备中。</h3><p>当前 Blog 只搭建框架，不预填论文、项目或研究成果。整理完成后，把 Markdown 文件放入 <code>src/content/blog/</code> 即可。</p><span class="path-note">src/content/blog/ · empty by design</span></div> : entries.map((entry) => <article class="blog-item"><div class="blog-date">{formatDate(entry.data.date)}</div><div><h3><a href={`${base}blog/${entry.slug}/`}>{entry.data.title}</a></h3><p>{entry.data.summary}</p><div class="tag-list">{entry.data.tags.map((tag) => <span class="tag">{tag}</span>)}</div></div><a class="blog-read" href={`${base}blog/${entry.slug}/`}>Read →</a></article>)}
+    </div>
+  </div>
+</BaseLayout>

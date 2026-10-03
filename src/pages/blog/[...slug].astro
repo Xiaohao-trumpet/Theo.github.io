@@ -1,0 +1,18 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("blog", ({ data }) => !data.draft);
+  return entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+const formatDate = (date: Date) => new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "short", day: "numeric" }).format(date);
+---
+<BaseLayout title={`${entry.data.title} · 周晓昊`} description={entry.data.summary} active="blog">
+  <div class="section"><a class="back-link" href={`${base}blog/`}>← 返回 Blog</a><article class="prose"><p class="page-kicker">{entry.data.category} · {formatDate(entry.data.date)}</p><h1>{entry.data.title}</h1><p class="page-intro">{entry.data.summary}</p><div class="tag-list">{entry.data.tags.map((tag) => <span class="tag">{tag}</span>)}</div><hr /><Content />{entry.data.nextSteps.length > 0 && <aside class="next-steps"><h3>Next steps</h3><ul>{entry.data.nextSteps.map((step) => <li>{step}</li>)}</ul></aside>}</article></div>
+</BaseLayout>

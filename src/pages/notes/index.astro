@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Notes · 周晓昊" description="周晓昊的本地研究 notes 维护说明。" active="notes">
+  <div class="section"><p class="page-kicker">PRIVATE NOTES</p><h1 class="hero-title">先记录，再整理。</h1><p class="section-lede">Notes 是本地优先的研究记录区，用来保存未成熟想法、论文阅读、实验失败、讨论和草稿。</p></div>
+  <div class="section"><h2 class="section-title">维护方式</h2><div class="two-column"><div class="soft-card"><h3>01 · 本地记录</h3><p>把 Markdown 文件放进 <code>src/content/notes/</code>，使用标题、日期、分类、摘要、标签和 next steps。</p></div><div class="soft-card"><h3>02 · 定期整理</h3><p>把可以公开的内容整理成文章，放进 <code>src/content/blog/</code>，提交并推送后即可生成线上页面。</p></div><div class="soft-card"><h3>03 · 公开边界</h3><p>不公开未发布数据、代码、导师项目细节或未经确认的研究结论。</p></div><div class="soft-card"><h3>04 · 支持格式</h3><p>Markdown 原生支持代码、列表、引用、图片、链接和 LaTeX 数学公式。</p></div></div></div>
+  <div class="section"><div class="math-note">公式示例：行内公式 <span>$E=mc^2$</span>，块级公式可以写成 <span>$$\nabla_\theta J(\theta)$$</span>。实际内容添加到 Markdown 后会由 KaTeX 渲染。</div></div>
+</BaseLayout>

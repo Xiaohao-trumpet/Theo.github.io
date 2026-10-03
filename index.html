@@ -1,399 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiaohao Zhou - Academic Homepage</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Xiaohao Zhou 的研究博客：记录 Agent、基础模型、Terminal Agent、Code Agent、RL/RLVR 与评测系统。" />
+  <meta name="theme-color" content="#2167d5" />
+  <link rel="canonical" href="https://xiaohao-trumpet.github.io/Theo.github.io/" />
+  <meta property="og:title" content="Xiaohao Zhou · Research Log" />
+  <meta property="og:description" content="记录 Agent、基础模型、Terminal Agent、Code Agent、RL/RLVR 与评测系统。" />
+  <title>Xiaohao Zhou · Research Log</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="nav-brand">X. Zhou</div>
-            <div class="nav-links">
-                <a href="#hero">About</a>
-                <a href="#experience">Research Experience</a>
-                <a href="#publications">Publications</a>
-                <a href="#projects">Projects</a>
-            </div>
+  <a class="skip-link" href="#app">跳到主要内容</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="返回首页">
+        <span class="brand-mark">XH</span>
+        <span class="brand-copy"><strong>Xiaohao Zhou</strong><small>research log / 研究记录</small></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#home" data-route="home">Home</a>
+        <a href="#blog" data-route="blog">Blog</a>
+        <a href="#research" data-route="research">Research</a>
+        <a href="#projects" data-route="projects">Projects</a>
+        <a href="#now" data-route="now">Now</a>
+        <a href="#about" data-route="about">About</a>
+      </nav>
+      <div class="header-tools" aria-label="页面设置">
+        <div class="theme-picker" role="group" aria-label="主题色">
+          <button class="theme-dot is-active" type="button" data-theme-choice="blue" aria-label="蓝色主题" aria-pressed="true"></button>
+          <button class="theme-dot theme-dot--violet" type="button" data-theme-choice="violet" aria-label="紫色主题" aria-pressed="false"></button>
+          <button class="theme-dot theme-dot--amber" type="button" data-theme-choice="amber" aria-label="琥珀色主题" aria-pressed="false"></button>
         </div>
-    </nav>
+        <button class="mode-toggle" type="button" aria-label="切换深色模式" aria-pressed="false">
+          <span class="mode-icon" aria-hidden="true">☾</span><span class="mode-label">Dark</span>
+        </button>
+      </div>
+    </header>
 
-    <div class="container">
-        <section id="hero" class="hero" style="animation-delay: 0.1s; display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;">
-            <div class="hero-photo" style="flex-shrink: 0; text-align: center;">
-                <img src="./fig/AIgen.png" alt="Portrait of Xiaohao Zhou" style="width: 130px; height: 170px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid var(--border-color);">
-            </div>
-            <div class="hero-content" style="flex: 1 1 100%; min-width: 300px; text-align: center; margin-top: 1rem;">
-                <h1 style="margin-bottom: 0.4rem; font-size: 2.6rem; font-family: 'Libre Baskerville', serif;">Xiaohao Zhou</h1>
-                <div style="font-size: 1.15rem; color: var(--text-color); margin-bottom: 1rem; font-weight: 500;">
-                    B.S. Student in Artificial Intelligence (Expected Jun 2027)<br>
-                    <i data-feather="map-pin" style="width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px;"></i>Chongqing University (Project 985)
-                </div>
+    <main id="app" tabindex="-1"></main>
 
-                <ul style="font-size: 1.08rem; color: var(--text-color); line-height: 1.9; margin: 0 auto 1.2rem; padding-left: 0; list-style: none;">
-                    <li style="margin-bottom: 0.45rem;">
-                        <strong>Academics:</strong> GPA: 3.75/4.00 (Rank: 2/53) | English: CET-6 (512)<br>
-                        <span style="font-size: 0.98rem; color: #666;">Core Courses: Advanced Mathematics (96), Probability and Statistics (92), Discrete Mathematics (97)</span>
-                    </li>
-                    <li><strong>Publication:</strong> one first-author manuscript prepared for submission to TOSEM (CCF-A)</li>
-                </ul>
-
-                <div style="margin-top: 14px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="./fig/chengji.png" alt="Academic performance overview" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                </div>
-            </div>
-        </section>
-
-        <!-- <section id="about" style="animation-delay: 0.2s;">
-            <h2 class="section-title">About & Research Plan</h2>
-            <div class="card">
-                <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">
-                    My long-term goal is to build more capable and reliable agents for effective interaction with diverse environments (CLI,GUI, Embodied environments maybe in the future).
-                    The journey will follow two concrete directions :
-                </p>
-
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 280px; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: #fafafa; position: relative;">
-                        <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
-                            <i data-feather="cpu" style="width:20px;"></i> Direction 1: Reasoning and Planning
-                        </h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6;">
-                            <strong>Overview:</strong>
-                            Discovering better training and prompting methods to bulid more capable agents in Planning and Tool Using for better interaction with environments.
-                        </p>
-                    </div>
-
-                    <div style="flex: 1; min-width: 280px; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: #fafafa; position: relative;">
-                        <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
-                            <i data-feather="shield" style="width:20px;"></i> Direction 2: Evaluation and Reliability
-                        </h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6;">
-                            <strong>Overview:</strong>
-                            Developing robust agent scaffolds and evaluation harnesses. Ensuring LLMs can reliably identify failures and interact with diverse environments (CLI/GUI) in realistic operational settings.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- <section id="education" style="animation-delay: 0.3s;">
-            <h2 class="section-title">Education</h2>
-            <div class="card">
-                <div class="edu-flex">
-                    <div class="edu-main">
-                        <div class="edu-title">Chongqing University (CQU)</div>
-                        <div class="edu-sub">B.S. in Artificial Intelligence, expected June 2027</div>
-                    </div>
-                    <div class="edu-meta">
-                        Sep 2023 - Present<br>
-                        Chongqing, China
-                    </div>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-value">3.75<span class="text-sm" style="color:var(--text-light)">/4.00</span></div>
-                        <div class="stat-label">GPA</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">89.16<span class="text-sm" style="color:var(--text-light)">/100</span></div>
-                        <div class="stat-label">Average Score</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">2<span class="text-sm" style="color:var(--text-light)">/53</span></div>
-                        <div class="stat-label">Rank</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">512</div>
-                        <div class="stat-label">CET-6</div>
-                    </div>
-                </div>
-
-                <div class="course-list">
-                    <strong>Selected Coursework:</strong> Advanced Mathematics (96), Probability and Statistics (92), Discrete Mathematics (97)
-                </div>
-            </div>
-        </section> -->
-
-        <!-- <section id="research" style="animation-delay: 0.4s;">
-            <h2 class="section-title">Research Interests</h2>
-            <div class="research-interests">
-                <div class="interest-item">
-                    <i data-feather="cpu" class="interest-icon"></i>
-                    <div class="interest-content">
-                        <h4>AI for Software Engineering</h4>
-                        <p>Using agentic systems to automate and enhance software engineering workflows, with emphasis on code understanding, code generation, and automated issue resolution.</p>
-                    </div>
-                </div>
-                <div class="interest-item">
-                    <i data-feather="terminal" class="interest-icon"></i>
-                    <div class="interest-content">
-                        <h4>Interactive LLM Agents</h4>
-                        <p>Designing agent scaffolds that operate effectively in CLI and GUI environments and can coordinate tools, actions, and feedback loops.</p>
-                    </div>
-                </div>
-                <div class="interest-item">
-                    <i data-feather="search" class="interest-icon"></i>
-                    <div class="interest-content">
-                        <h4>Code Intelligence</h4>
-                        <p>Semantic code search, cross-domain retrieval, and retrieval pipelines that combine efficient candidate generation with stronger reranking.</p>
-                    </div>
-                </div>
-                <div class="interest-item">
-                    <i data-feather="shield" class="interest-icon"></i>
-                    <div class="interest-content">
-                        <h4>Evaluation and Reliability</h4>
-                        <p>Building evaluation harnesses and testing setups for AI agents to better measure robustness, interaction quality, and behavior in realistic environments.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <section id="experience" style="animation-delay: 0.6s;">
-            <h2 class="section-title">Research Experience</h2>
-            <div class="card">
-                <div class="edu-flex" style="margin-bottom: 1rem;">
-                    <div class="edu-main">
-                        <div class="edu-title">Research Assistant, Chongqing University</div>
-                        <div class="edu-sub">Advisors: Assoc. Prof. Chao Liu and Prof. Hongyu Zhang</div>
-                    </div>
-                    <div class="edu-meta">Apr 2025 - Present</div>
-                </div>
-                <div style="margin-bottom: 0.8rem; font-size: 0.95rem; color: #444;">
-                    <strong>Research Focus:</strong> Code Search & LLM Agent
-                </div>
-                <ul class="academic-list">
-                    <li>Leading research on semantic code search, with a focus on how LLMs can better support cross-domain code retrieval.</li>
-                    <li>Proposed the AbsMatcher framework, a two-stage method combining semantic abstraction and LLM-based comparative reranking.</li>
-                    <li>Conducted empirical analysis on retrieval effectiveness and efficiency, showing meaningful gains in both ranking quality and cost reduction.</li>
-                    <li>Prepared a first-author manuscript based on this project for submission to TOSEM.</li>
-                </ul>
-            </div>
-
-
-            <div class="card" style="margin-top: 1rem;">
-                <div class="edu-flex" style="margin-bottom: 1rem;">
-                    <div class="edu-main">
-                        <div class="edu-title">Research Assistant, Zhejiang University</div>
-                    </div>
-                    <div class="edu-meta">Jan 2026 - Jun 2026</div>
-                </div>
-                <div style="margin-bottom: 0.8rem; font-size: 0.95rem; color: #444;">
-                    <strong>Research Focus:</strong> Code Agents & GUI Agents
-                </div>
-                <ul class="academic-list">
-                    <li>Conducted a systematic study of GUI agents, reproduced Show-UI, Agent S, and OpenApps, and advanced several research ideas through experimental validation.</li>
-                    <li>Surveyed and reproduced code-agent research and contributed to idea validation, experiments, and paper writing; participated in a MoE-LoRA study addressing bottlenecks in multilingual program repair as the second-listed co-first author.</li>
-                    <li>Supported an Ant Foundation research proposal by drafting technical content and producing figures.</li>
-                </ul>
-            </div>
-
-
-        </section>
-
-        <section id="publications" style="animation-delay: 0.5s;">
-            <h2 class="section-title">Publications</h2>
-            <div class="card paper-card">
-                <div class="paper-venue">Prepared for Submission to TOSEM</div>
-                <h3 class="paper-title">AbsMatcher: LLM-Based Semantic Abstraction and Comparative Reranking for Cross-Domain Code Search</h3>
-                <div class="paper-authors">
-                    <strong>Xiaohao Zhou</strong>, Chao Liu, Yueheng Zhu, Yanming Yang, Ying Zou, Hongyu Zhang
-                </div>
-
-                <hr style="border:none; border-top:1px solid var(--border-color); margin: 1.5rem 0;">
-
-                <div class="paper-grid">
-                    <div class="paper-section">
-                        <h5><i data-feather="help-circle" style="width:16px;"></i> Problem</h5>
-                        <p>Code search aims to retrieve code snippets from the codebase
-that are semantically related to a given natural language query. Pre-trained
-language models (PLMs) have shown effective performance by embedding query and code into a shared vector space. However, the PLM-based method
-struggles in cross-domain code search (CDCS), where a target domain (e.g., specialized programming languages) suffer from critical
-data scarcity issues.
-</p>
-                    </div>
-
-                    <div class="paper-section">
-                        <h5><i data-feather="book-open" style="width:16px;"></i> Related Work </h5>
-                        <ul class="academic-list">
-                            <li><strong>RAPID:</strong>  which performs domain adaptation for code search by generating pseudo-labeled synthetic pairs </li>
-                            <li><strong>CodeBridge(SOTA):</strong> which leverages an LLM to generate code and comments for a given query and target code snippet, respectively. It then alleviates the cross-domain challenge by fusing the semantic information from three perspectives: query-code, code-code, and query-comments .</li>
-                            <li><strong>Limitation:</strong> These methods heavily depend on target-domain training data or complex multi-view fusion architectures, limiting their transferability and efficiency under strict zero-shot or CDCS settings without retraining.</li>
-                        </ul>
-
-                        <div style="margin-top: 12px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                            <img src="./fig/CodeBridge.png" alt="CodeBridge Model Architecture" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                        </div>
-                    </div>
-
-                    <div class="paper-section">
-                        <h5><i data-feather="target" style="width:16px;"></i> Motivation</h5>
-                        <ul class="academic-list">
-                            <li>Existing code search models transfer poorly to cross-domain settings, where natural-language queries and code snippets often exhibit a substantial semantic gap and target-domain supervision is scarce.</li>
-                            <li>Data generation methods can provide additional training data, but each transfer to a new target domain still requires another round of fine-tuning, resulting in substantial time costs and reduced practical usability.</li>
-                            <li>Recent LLM-based zero-shot methods reduce the need for fine-tuning, but still rely on multi-view embedding fusion, which introduces extra computation and unstable fusion effects.</li>
-                            <li>Even current state-of-the-art methods still achieve limited accuracy. We believe this is because they mainly use LLMs for semantic extraction, without fully exploiting the broader strengths of LLMs.</li>
-                        </ul>
-                        <div style="margin-top: 12px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                            <img src="./fig/performance.png" alt="Performance Results" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                        </div>
-                    </div>
-
-                    <div class="paper-section">
-                        <h5><i data-feather="layers" style="width:16px;"></i> Method</h5>
-                        <p><span class="highlight">Stage 1: Semantic Abstraction</span><br>
-                        AbsMatcher first abstracts source code into query-aligned semantic descriptions, producing a retrieval representation that is more robust to domain shift.</p>
-                        <p style="margin-top:0.8rem;"><span class="highlight">Stage 2: Comparative Reranking</span><br>
-                        It then applies LLM-based comparative reranking over top candidates to improve final ranking quality through fine-grained pairwise judgments.</p>
-                        <div style="margin-top: 12px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                            <img src="./fig/final_image.drawio.svg" alt="Performance Results" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                        </div>
-                    </div>
-
-                    <div class="paper-section">
-                        <h5><i data-feather="bar-chart-2" style="width:16px;"></i>Experiments & Results</h5>
-
-                        <div style="margin-top: 1rem;">
-                            <div style="margin-bottom: 1.5rem;">
-                                <strong style="color: var(--primary-color); font-size: 1.05rem;">RQ1: Can AbsMatcher outperform SOTA baselines?</strong>
-                                <ul class="academic-list" style="margin-top: 0.5rem; margin-bottom: 0.8rem;">
-                                    <li>AbsMatcher achieves the best overall retrieval performance on all three cross-domain benchmarks: <strong>CoSQA, SQL, and Solidity</strong>.</li>
-                                    <li>Its MRR reaches <strong>0.618</strong>, <strong>0.913</strong>, and <strong>0.811</strong>, outperforming the strongest baseline CodeBridge by <strong>7.4%</strong>, <strong>10.2%</strong>, and <strong>15.3%</strong>, respectively.</li>
-                                    <li>Even the first-stage <strong>CodeAbs Retriever</strong> alone already surpasses CodeBridge, showing that semantic abstraction itself is a strong retrieval representation for CDCS.</li>
-                                </ul>
-                                <div style="margin-top: 8px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/RQ1.png" alt="Overall retrieval performance across CoSQA, SQL, and Solidity" style="width: 100%; border-radius: 4px; display: block;">
-                                </div>
-                                <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem;">
-                                    Table 2 from the paper: overall performance comparison against GraphCodeBERT, UniXcoder, CoCoSoDa, and CodeBridge.
-                                </div>
-                            </div>
-
-                            <div style="margin-bottom: 1.5rem;">
-                                <strong style="color: var(--primary-color); font-size: 1.05rem;">RQ2: Why can CodeAbs outperform the best baseline?</strong>
-                                <ul class="academic-list" style="margin-top: 0.5rem; margin-bottom: 0.8rem;">
-                                    <li>The key finding is that <strong>a single CodeAbs representation can cover all Top-1 wins of CodeBridge’s three retrieval views</strong>, while also adding new correct retrievals.</li>
-                                    <li>Compared with the combined three-view success set of CodeBridge, CodeAbs gains <strong>+7</strong> additional Top-1 wins on CoSQA, <strong>+66</strong> on SQL, and <strong>+95</strong> on Solidity.</li>
-                                    <li>This means CodeAbs preserves multi-view complementarity in a simpler one-pass retriever, reducing Stage-I computation to roughly <strong>1/3</strong> of CodeBridge.</li>
-                                </ul>
-                                <div style="margin-top: 8px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/venn.svg" alt="Coverage analysis of CodeBridge's three retrieval views and CodeAbs Retriever" style="width: 100%; border-radius: 4px; display: block;">
-                                </div>
-                                <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem;">
-                                    Figure 4 from the paper: coverage analysis showing that CodeAbs strictly contains the combined Top-1 success set of CodeBridge's three views.
-                                </div>
-                            </div>
-
-                            <div style="margin-bottom: 1.5rem;">
-                                <strong style="color: var(--primary-color); font-size: 1.05rem;">RQ3: Can LLM-based comparative reranking generalize to other models?</strong>
-                                <ul class="academic-list" style="margin-top: 0.5rem; margin-bottom: 0.8rem;">
-                                    <li>The second stage is not specific to AbsMatcher. Applying the same comparative reranking strategy to <strong>CoCoSoDa</strong> and <strong>CodeBridge</strong> also yields clear gains.</li>
-                                    <li>For AbsMatcher itself, reranking improves average head-ranking quality by <strong>+10.4 points on Acc@1</strong> and <strong>+3.0 points on Acc@3</strong> across the three datasets.</li>
-                                    <li>The same trend appears on other retrievers, indicating that comparative reranking is a <strong>general plug-in improvement for code search models</strong>.</li>
-                                </ul>
-                                <div style="margin-top: 8px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/rerank_results.png" alt="Effect of reranking on head-ranking quality under the cross-domain setting" style="width: 100%; border-radius: 4px; display: block;">
-                                </div>
-                                <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem;">
-                                    Table 3 from the paper: head-ranking improvements after adding comparative reranking to different first-stage retrievers.
-                                </div>
-                            </div>
-
-                            <div style="margin-bottom: 1.5rem;">
-                                <strong style="color: var(--primary-color); font-size: 1.05rem;">Discussion: Design Sensitivity, Ablation, and Efficiency</strong>
-                                <ul class="academic-list" style="margin-top: 0.5rem; margin-bottom: 0.8rem;">
-                                    <li><strong>Candidate pool size:</strong> Acc@1 improves as the reranking pool grows, but the gain saturates after <strong>K = 15</strong>. In practice, <strong>K = 10</strong> offers the best efficiency, while <strong>K = 15</strong> gives the strongest mean Acc@1.</li>
-                                    <li><strong>Effect of Code :</strong> removing the original code snippet consistently hurts retrieval. Keeping both the generated abstraction and the raw code improves MRR by <strong>+4.7pp</strong> on CoSQA, <strong>+4.2pp</strong> on SQL, and <strong>+6.1pp</strong> on Solidity.</li>
-                                    <li><strong>Latency trade-off:</strong> Stage-I is simpler than CodeBridge and uses only one embedding space; Stage-II remains bounded, with mean reranking time rising from <strong>0.449s</strong> at <strong>K = 10</strong> to <strong>16.623s</strong> at <strong>K = 25</strong>.</li>
-                                </ul>
-                                <div style="margin-top: 8px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/curve.png" alt="Effect of candidate pool size K on Acc@1" style="width: 100%; border-radius: 4px; display: block;">
-                                </div>
-                                <div style="margin-top: 8px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/withoutcode.png" alt="Effect of candidate pool size K on Acc@1" style="width: 100%; border-radius: 4px; display: block;">
-                                </div>
-                                <div style="margin-top: 8px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <img src="./fig/time.png" alt="Effect of candidate pool size K on Acc@1" style="width: 100%; border-radius: 4px; display: block;">
-                                </div>
-                                <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem;">
-                                    Figure 5 from the paper: effect of candidate pool size on head-ranking accuracy, discussed together with the ablation in Table 6 and latency analysis in Table 9.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <section id="projects" style="animation-delay: 0.7s;">
-            <h2 class="section-title">Projects</h2>
-            <div class="card">
-                <div class="project-header">
-                    <h3>MiniClaw</h3>
-                    <a href="https://github.com/Xiaohao-trumpet/MiniClaw" target="_blank" class="btn-github">
-                        <i data-feather="github" style="width:16px;"></i> GitHub
-                    </a>
-                </div>
-                <div class="text-sm">
-                    <p style="margin-bottom:0.8rem;">A learning-oriented AI agent system for cross-device interaction and task automation, enabling mobile-to-PC control.</p>
-                    <ul class="academic-list">
-                        <li>Built a locally deployed agent system that allows users to control computers from mobile devices through natural language.</li>
-                    </ul>
-
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                        <div style="flex: 1; min-width: 280px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                            <img src="./fig/linchaozhu/mini1.jpg" alt="Instruction Issuance Page" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                            <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem; text-align: center;">Instruction Issuance Page</div>
-                        </div>
-                        <div style="flex: 1; min-width: 280px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                            <img src="./fig/linchaozhu/mini2.jpg" alt="Task Execution Page" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                            <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem; text-align: center;">Task Execution Page</div>
-                        </div>
-                    </div>
-                    <h4 style="margin-top: 1.2rem; color: var(--primary-color); font-size: 1rem;">
-                        Architecture Comparison with OpenClaw
-                    </h4>
-                    <div style="margin-top: 12px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="./fig/linchaozhu/comparison.drawio.svg" alt="MiniClaw vs OpenClaw Architecture Comparison" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                    </div>
-                    <div style="font-size: 0.82rem; color: #666; margin-top: 0.4rem; text-align: center;">
-                        Architecture Comparison: MiniClaw, Claude Code, and OpenClaw
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-
-
-    <footer>
-        <div class="container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i data-feather="user"></i> Xiaohao Zhou
-                </div>
-                <a href="mailto:zhouxiaohao@stu.cqu.edu.cn" class="contact-item" style="color:var(--text-muted)">
-                    <i data-feather="mail"></i> zhouxiaohao@stu.cqu.edu.cn
-                </a>
-                <div class="contact-item">
-                    <i data-feather="phone"></i> (+86) 159-7912-7726
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2026 Xiaohao Zhou. All Rights Reserved. <br>
-                <i>Built for academic communication and research outreach.</i>
-            </div>
-        </div>
+    <footer class="site-footer">
+      <div><span class="footer-mark">XH</span><span>研究记录持续更新中。</span></div>
+      <div class="footer-meta"><span>© <span id="year"></span> Xiaohao Zhou</span><a href="https://github.com/Xiaohao-trumpet/Theo.github.io" target="_blank" rel="noreferrer">Source on GitHub ↗</a></div>
     </footer>
-
-    <script src="./main.js"></script>
+  </div>
+  <script src="./main.js"></script>
 </body>
 </html>

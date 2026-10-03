@@ -1,54 +1,53 @@
-# Blog maintenance
+# Blog 维护说明
 
-这个主页使用 Astro 静态生成。Blog 文章和本地 notes 都是 Markdown，内容进入 Git 后由 GitHub Actions 构建成静态页面。
+这个站点沿用 `w-r-s/academic-homepage-template` 的静态 HTML/CSS/JavaScript 技术栈，不需要 Node、Astro 或构建步骤。GitHub Pages 直接发布仓库根目录。
 
-## 目录
+## 发布一篇公开文章
 
-- `src/content/notes/`：本地优先的未成熟记录、论文阅读、实验失败和草稿。
-- `src/content/blog/`：整理完成、可以公开的文章。
-- `src/content/research/`：研究方向和长期问题的记录。
-- `src/content/projects/`：项目页面的预留目录。
-- `public/assets/`：图片、图标和其他静态资源。
+1. 在本地先把想法记录到私人 notes；整理完成并确认可以公开后，再继续下面的步骤。
+2. 在 `content/blog/` 新建一个 Markdown 文件，例如 `agent-eval.md`。
+3. 在 `blog/posts.json` 增加一条索引：
 
-当前这些内容目录为空，Blog 页面会显示空状态。添加第一篇文章时，创建例如 `src/content/blog/first-note.md`：
-
-```md
----
-title: "文章标题"
-date: 2026-10-03
-category: "Research"
-summary: "一段用于列表页的摘要。"
-tags: ["Agent", "evaluation"]
-draft: false
-nextSteps:
-  - "下一步问题"
----
-
-正文使用普通 Markdown。
-
-行内公式：$E = mc^2$
-
-块级公式：
-
-$$
-\\nabla_\\theta J(\\theta)
-$$
-
-图片可以放到 `public/assets/`，然后在 Markdown 中引用：
-
-![图片说明](/Theo.github.io/assets/img/example.png)
+```json
+[
+  {
+    "slug": "agent-eval",
+    "title": "文章标题",
+    "date": "2026-10-03",
+    "category": "Research",
+    "summary": "一两句摘要。",
+    "tags": ["Agent", "Evaluation"],
+    "file": "agent-eval.md",
+    "nextSteps": ["下一步问题"]
+  }
+]
 ```
 
-`draft: true` 的内容会保留在本地内容集合里，但不会进入公开 Blog。把 note 整理成公开文章时，复制到 `src/content/blog/`，补齐 frontmatter，把 `draft` 改为 `false`，然后提交并推送。
+4. 访问 `blog/article.html?slug=agent-eval` 检查文章。
+5. 提交并推送 `blog/posts.json` 与 `content/blog/agent-eval.md`。
 
-## 本地命令
+## Markdown 能力
+
+文章正文使用 GitHub Flavored Markdown，由浏览器加载的 Marked 渲染，支持标题、列表、表格、代码块、引用、链接、图片和原始 HTML/SVG。数学公式由 KaTeX 渲染：
+
+```markdown
+行内公式：$E=mc^2$
+
+$$
+\mathcal{L}(\theta) = \mathbb{E}_{x \sim D}[\log p_\theta(x)]
+$$
+```
+
+图片可以引用仓库里的相对路径，例如从 `content/blog/` 中写 `../../images/template/avatar.jpg`，也可以在发布前把文章专用图片放在 `images/blog/`。
+
+## 本地预览
+
+在仓库根目录运行：
 
 ```bash
-npm install
-npm run dev
-npm run check
-npm run build
-npm run preview
+python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-Astro 使用 `remark-math` 和 `rehype-katex` 渲染 LaTeX，Markdown 原生支持标题、列表、链接、图片、代码块、引用和 HTML/SVG 图标。GitHub Pages 使用 `.github/workflows/pages.yml`，推送 `main` 后自动运行 `npm ci`、`npm run build` 并部署 `dist/`。
+然后打开 `http://127.0.0.1:8080/`。因为文章和索引通过 `fetch` 读取，不能直接双击 HTML 文件预览。
+
+目前 `blog/posts.json` 为空，所以公开 Blog 只显示框架提示，不包含尚未确认的论文、项目或研究结果。

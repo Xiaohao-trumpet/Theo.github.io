@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+---
+<BaseLayout title="周晓昊 · Research Log" description="重庆大学人工智能专业本科生周晓昊的研究主页与博客。" active="home">
+  <div class="section hero-section">
+    <p class="hero-kicker">PERSONAL RESEARCH LOG     ---
+    title: 第一篇笔记
+    date: 2026-10-03
+    category: Notes
+    summary: 一句话摘要
+    tags: [agent]
+    draft: false
+    ---
+    
+    正文写在这里。· 2023—2027</p>
+    <h1 class="hero-title">把正在思考的事情，<em>慢慢写清楚。</em></h1>
+    <div class="section-body">
+      <p class="section-lede">你好，我是周晓昊，重庆大学人工智能专业本科生（2023—2027）。这里是我的个人主页，也是一个逐步维护的研究博客。</p>
+      <p class="section-lede">目前关注 Agent 和基础模型，尤其是 Terminal Agent、Code Agent、RL/RLVR、ALE/ALE-Bench，以及数据构造、模型训练、benchmark、evaluator、trajectory、harness 和 agent systems。</p>
+      <div class="hero-links"><a class="pill-link" href={`${base}blog/`}>进入 Blog →</a><a class="pill-link" href={`${base}notes/`}>了解维护方式 →</a></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Research focus</h2>
+    <div class="two-column">
+      <div class="soft-card"><h3>Agent systems</h3><p>围绕工具使用、环境交互、轨迹和 harness 记录问题与设计。</p></div>
+      <div class="soft-card"><h3>Foundation models</h3><p>关注训练信号、数据构造、RL/RLVR 和评测之间的关系。</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Blog status</h2>
+    <div class="status-line">Blog 框架已搭好，文章内容 TBD</div>
+    <p class="section-lede">后续会先在本地 notes 中记录，再把整理完成、可以公开的 Markdown 文档放进 Blog。当前不预填论文、项目或研究成果。</p>
+  </div>
+</BaseLayout>

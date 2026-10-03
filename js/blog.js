@@ -14,6 +14,22 @@
     return markdown.replace(/^---[\s\S]*?---\s*/, '');
   }
 
+  function protectMath(markdown) {
+    var formulas = [];
+    var protectedMarkdown = markdown.replace(/\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$(?!\$)[^\n$]+?\$(?!\$)/g, function (formula) {
+      var token = 'MATHPLACEHOLDER' + formulas.length;
+      formulas.push(formula);
+      return token;
+    });
+    return { markdown: protectedMarkdown, formulas: formulas };
+  }
+
+  function restoreMath(html, formulas) {
+    return html.replace(/MATHPLACEHOLDER(\d+)/g, function (match, index) {
+      return '<span class="math-source">' + escapeHtml(formulas[Number(index)]) + '</span>';
+    });
+  }
+
   function renderMath() {
     if (window.renderMathInElement) {
       window.renderMathInElement(article, {
@@ -47,7 +63,9 @@
     }).then(function (markdown) {
       if (!window.marked) throw new Error('marked unavailable');
       var tags = (post.tags || []).map(function (tag) { return '<span class="blog-tag">' + escapeHtml(tag) + '</span>'; }).join('');
-      article.innerHTML = '<header class="article-header"><p class="blog-kicker">' + escapeHtml(post.category || 'Research') + ' · ' + escapeHtml(post.date) + '</p><h1>' + escapeHtml(post.title) + '</h1><p class="article-summary">' + escapeHtml(post.summary) + '</p><div class="blog-tags">' + tags + '</div></header><div class="markdown-body">' + window.marked.parse(removeFrontmatter(markdown), { breaks: true, gfm: true }) + '</div>' + (post.nextSteps && post.nextSteps.length ? '<aside class="next-steps"><strong>Next steps</strong><ul>' + post.nextSteps.map(function (step) { return '<li>' + escapeHtml(step) + '</li>'; }).join('') + '</ul></aside>' : '');
+      var protectedMarkdown = protectMath(removeFrontmatter(markdown));
+      var renderedMarkdown = restoreMath(window.marked.parse(protectedMarkdown.markdown, { breaks: true, gfm: true }), protectedMarkdown.formulas);
+      article.innerHTML = '<header class="article-header"><p class="blog-kicker">' + escapeHtml(post.category || 'Research') + ' · ' + escapeHtml(post.date) + '</p><h1>' + escapeHtml(post.title) + '</h1><p class="article-summary">' + escapeHtml(post.summary) + '</p><div class="blog-tags">' + tags + '</div></header><div class="markdown-body">' + renderedMarkdown + '</div>' + (post.nextSteps && post.nextSteps.length ? '<aside class="next-steps"><strong>Next steps</strong><ul>' + post.nextSteps.map(function (step) { return '<li>' + escapeHtml(step) + '</li>'; }).join('') + '</ul></aside>' : '');
       renderMath();
     });
   }).catch(function () {

@@ -2,8 +2,10 @@
   'use strict';
 
   var themeToggle = document.getElementById('theme-toggle');
+  var paletteToggle = document.getElementById('palette-toggle');
   var root = document.documentElement;
   var savedTheme = localStorage.getItem('clean-tem-theme');
+  var savedPalette = localStorage.getItem('clean-tem-palette');
   var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   function setTheme(theme) {
@@ -18,7 +20,25 @@
     localStorage.setItem('clean-tem-theme', isDark ? 'dark' : 'light');
   }
 
+  function setPalette(palette) {
+    var isBlue = palette === 'blue';
+    root.dataset.palette = isBlue ? 'blue' : 'paper';
+    if (paletteToggle) {
+      paletteToggle.textContent = isBlue ? '●' : '◈';
+      paletteToggle.setAttribute('aria-pressed', String(isBlue));
+      paletteToggle.setAttribute('aria-label', isBlue ? '切换白色默认色系' : '切换蓝色色系');
+      paletteToggle.title = isBlue ? '切换白色默认色系' : '切换蓝色色系';
+    }
+    localStorage.setItem('clean-tem-palette', isBlue ? 'blue' : 'paper');
+  }
+
+  setPalette(savedPalette || 'paper');
   setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+  if (paletteToggle) {
+    paletteToggle.addEventListener('click', function () {
+      setPalette(root.dataset.palette === 'blue' ? 'paper' : 'blue');
+    });
+  }
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
       setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
